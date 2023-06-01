@@ -1,4 +1,5 @@
 .task {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -10,6 +11,9 @@
 }
 
 .task input[type=checkbox] {
+    position: absolute;
+    top: 1.2rem;
+    left: 1rem;
     width: 18px;
     height: 18px;
     border-radius: 50%;
@@ -21,15 +25,43 @@
     cursor: pointer;
 }
 
+.taskinput[type=checkbox]:hover  {
+    background-color: #1E6F9F;
+}
+
 .task input[type=checkbox]:checked {
     clip-path: circle(50% at 50% 50%);
     background-color: #5E60CE;
     appearance: auto;
 }
 
+.task input[type=checkbox]:checked + p {
+    color: var(--gray-300);
+}
+
+
+.task p {
+    margin-left: 2rem;
+    color: var(--gray-100);
+    line-height: 1.4;
+    font-weight: 400;
+    font-size: 0.875rem;
+}
+
 .task button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     background: transparent;
+    padding: 0.4rem;
+    border-radius: 4px;
     border: none;
     cursor: pointer;
     color: var(--gray-300);
+}
+
+.task button:hover {
+    background-color: var(--gray-400);
+    color: #F75A68;
 }
